@@ -1,4 +1,4 @@
-package jeu;
+package casino;
 public class De {
     public De(){
 

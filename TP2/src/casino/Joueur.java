@@ -1,4 +1,7 @@
-package jeu;
+package casino;
+
+import exception.*;
+
 public class Joueur{
     public Joueur(){}
     public int mise(){

@@ -1,6 +1,7 @@
-package jeu;
+package casino;
 
 import java.util.*;
+import exception.*;
 
 public class Jeu {
 

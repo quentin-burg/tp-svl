@@ -1,4 +1,4 @@
-package jeu;
+package casino;
 public class Banque {
     public Banque(){}
     public void crediter(int somme) {
