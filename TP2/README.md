@@ -6,7 +6,7 @@ Q2)
 
 - le jeu est fermé => levée de JeuFermeException
 - le joueur n'est pas solvable => levée de DebitImpossibleException
-jouer catch l'exception et il ne se passe rien. On passe à la suite du jeu. On ne va pas lancer les dés, il faut vérifier cela (!!! avec verify !!!)
+jouer catch l'exception et il ne se passe rien. On passe à la suite du jeu. On ne va pas lancer les dés, il faut vérifier cela avec un verify.
 - le joueur est solvable :
 	- le joueur perd : fin du jeu
 	- le joueur gagne :
