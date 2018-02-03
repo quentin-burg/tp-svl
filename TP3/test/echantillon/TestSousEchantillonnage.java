@@ -12,7 +12,7 @@ import exception.ListeVideException;
 import exception.LongueurNegativeException;
 import exception.LongueurSuperieureAFrequence;
 
-public class TestSousEchantillonnageReussi {
+public class TestSousEchantillonnage {
 
 	@Test (expected=LongueurNegativeException.class)
 	public void testSousEchantillonnageLongueurNegativeException() throws Exception{
@@ -52,7 +52,7 @@ public class TestSousEchantillonnageReussi {
 	}
 	
 	@Test
-	public void testSousEchantillonnageReussi() throws Exception{
+	public void testSousEchantillonnageReussiListeTaille10() throws Exception{
 		Echantillon echantillon = new Echantillon();
 		List<Integer> l = new ArrayList<Integer>();
 		List<Integer> res = new ArrayList<Integer>();
@@ -62,6 +62,19 @@ public class TestSousEchantillonnageReussi {
 				res.add(i);
 		}
 		assertEquals(res, echantillon.sous_echantillonne(l, 2, 3));
+	}
+	
+	@Test
+	public void testSousEchantillonnageReussiListeTaillePlusPetite() throws Exception{
+		Echantillon echantillon = new Echantillon();
+		List<Integer> l = new ArrayList<Integer>();
+		List<Integer> res = new ArrayList<Integer>();
+		for (int i = 1; i <= 4; i++){
+			l.add(i);
+			if (i == 1 || i==4)
+				res.add(i);
+		}
+		assertEquals(res, echantillon.sous_echantillonne(l, 1, 3));
 	}
 
 }
