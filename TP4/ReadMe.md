@@ -13,3 +13,15 @@
   - Débiter porte-monnaie :
       - Montant porte-monnaie solde suffisant : OK
       - Montant porte-monnaie solde insuffisant : Levée d'exception
+
+## Question 3 :
+  - Création d'une nouvelle carte
+  - Récupération du solde
+  - Récupération du nombre de tickets
+  - Récupération de la valeur d'un ticket
+  - Débiter sans ticket :
+      - Vérifier que le montant est déduit du solde
+      si le solde est supérieur au montant
+  - Débiter avec ticket :
+      - Vérifier qu'on débite bien un ticket si le
+      nombre de tickets est suffisant

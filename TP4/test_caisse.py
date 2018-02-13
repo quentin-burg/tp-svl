@@ -55,4 +55,3 @@ class TestCaisse(unittest.TestCase):
         caisse.payerAvecTicket(carte, 20)
         verify(carte).debiterAvecTicket()
         verify(carte).debiter(12)
-        
