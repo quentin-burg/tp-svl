@@ -26,20 +26,40 @@ public class AuthentificationTest {
 	
 	@Test
 	public void testAjoutUtilisateurAvecNomPrenomLoginFournis() throws Exception {
-		auth.createUser(user);
+		auth.createUserWithLogin(user);
 		verify(db).addUser(user);
 	}
 	
 	@Test(expected=LoginDejaPrisException.class)
 	public void testAjoutUtilisateurAvecNomPrenomLoginFournisException() throws Exception {
-		doThrow(new LoginDejaPrisException()).when(db).addUser(user);
-		auth.createUser(user);
+		when(db.estDejaPris(user)).thenReturn(true);
+		auth.createUserWithLogin(user);
 	}
 
 	@Test
-	public void testAjouterUtilisateurAvecNomPrenomEtLoginCalcule() throws LoginDejaPrisException {
-		//when(db.estDejaPris(user)).thenReturn(false);
-		auth.createUser(user);
+	public void testAjouterUtilisateurAvecNomPrenomEtLoginCalculeRegle1() {
+		auth.createUserWithoutLogin(user);
+		verify(user).calculeLoginRegle1();
 		verify(db).addUser(user);
 	}
+	
+	@Test
+	public void testAjouterUtilisateurAvecNomPrenomEtLoginCalculeRegle2() {
+		when(db.estDejaPris(user)).thenReturn(true);
+		auth.createUserWithoutLogin(user);
+		verify(user).calculeLoginRegle2();
+		verify(db).addUser(user);
+	}
+	
+	@Test
+	public void testAjouterUtilisateurAvecNomPrenomEtLoginCalculeRegle3() {
+		when(db.estDejaPris(user)).thenReturn(true);
+		auth.createUserWithoutLogin(user);
+		verify(user).calculeLoginRegle3();
+		verify(db).addUser(user);
+	}
+	
+	
+	
+	
 }

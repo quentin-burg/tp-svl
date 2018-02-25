@@ -10,9 +10,22 @@ public class Authentification {
 		this.db = db;
 	}
 	
-	public void createUser(User user) throws LoginDejaPrisException {
+	public void createUserWithLogin(User user) throws LoginDejaPrisException {
+		if (db.estDejaPris(user)){
+			throw new LoginDejaPrisException();
+		}
 		db.addUser(user);
-		//TODO Gérer le fait que le login soit dans la database ou pas
+	}
+	
+	public void createUserWithoutLogin(User user) {
+		user.calculeLoginRegle1();
+		if (db.estDejaPris(user)) {
+			user.calculeLoginRegle2();
+		}
+		if (db.estDejaPris(user)) {
+			user.calculeLoginRegle3();
+		}
+		db.addUser(user);
 	}
 
 }
