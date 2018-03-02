@@ -1,6 +1,6 @@
 package exception;
 
-public class LoginDejaPrisException extends Exception {
+public class VirguleManquanteDansMessageLog extends Exception {
 
 	/**
 	 * 

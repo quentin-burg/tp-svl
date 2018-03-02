@@ -2,7 +2,7 @@
 ## Quentin BURG - Alexia OMIETANSKI
 
 
-**Question 1.1:**
+**Question 1:**
   - Création d'un utilisateur dans la base à partir des nom, prénom, login :
     - *Cas nominal* : Le login n'est pas dans la base alors l'utilisateur est ajouté
     - *Cas d'exception* : Le login est déjà dans la base, une exception est alors
@@ -15,3 +15,9 @@
           - Le login est composé des 7 premières lettres au maximum du nom concaténé
           à l'initiale du prénom
           - Sinon, l'admin cherche un login et vérifie qu'il n'existe pas
+
+** Couverture de code **
+    La couverture de code est la suivante :
+        - 100% pour la classe *Authentification*
+        - 100% pour la classe *Database*
+        - 100% pour la classe *User*
